@@ -1,21 +1,30 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <title>ibi</title>
-  <link rel="stylesheet" href="../css/mainWindow.css">
+
+  <meta name="viewport" content="width=device-width", initial-scale=1.0>
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <link rel="stylesheet" href="../css/signIn.css">
+  
 </head>
 <body >
+        <p id="close" onclick="myfunction()">&times;</p>
+    
   <h2 >Sign in</h2>
-    <div class="bdy">
+    
+    <div class="container">
         <form name="ipcForm" method="GET" action="#" >
             <input type="text" placeholder="Email" name="email" id="email" required>
             <input type="password" placeholder="Password" name="pwd" id="pwd" required>
             <button type="submit" id="submit" >Sign in</button>
         </form>
         <div class="foo">
-            <p> <a  href="./forgot.html" >Forgot your password?</a></p>
+            <a  href="#" >Forgot your password?</a>
         </div>
         
     </div>
+    <script>
+    require('../scripts/signIn.js');
+    </script>
 </body>
 </html>
