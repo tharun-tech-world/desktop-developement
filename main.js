@@ -26,17 +26,8 @@ function createWindow(){
         const contextMenu=Menu.buildFromTemplate(template);
         tray.setContextMenu(contextMenu);
         tray.on('click',(e,b)=>{
-            if(win.isVisible()){
-              win.hide();
-            }
-            else{
-              win.show();
-              win.setBounds({
-                  x: b.x-250,
-                  y: b.y-500,
-                  
-              })
-            }
+          win.isVisible() ? win.hide() : win.show();
+          
         }) 
   // Create new window
     win = new BrowserWindow({
@@ -51,10 +42,10 @@ function createWindow(){
     
     });
     win.setBounds({  x:800, y:180})
-    console.log(win.getBounds())
+    //console.log(win.getBounds())
   //Load html in window
     win.loadURL(url.format({
-    pathname: path.join(__dirname, './public/html/welcome.html'),
+    pathname: path.join(__dirname, './public/html/welcomecrud.html'),
     protocol: 'file:',
     slashes:true
   }));
@@ -66,6 +57,9 @@ function createWindow(){
       icon: path.join(__dirname, './public/assets/abhi.png'),
     }
   ]);
+
+  //Developers tools 
+  //win.webContents.openDevTools();
 
   win.on('closed', ()=>{
     win=null;
