@@ -1,16 +1,16 @@
 {
-  "name": "celebrity",
+  "name": "tharun_crud",
   "version": "1.0.0",
   "description": "Tharun Bio Data",
   "main": "main.js",
   "scripts": {
     "start": "electron ."
-    
   },
   "author": "Tharun Pothuraj",
   "license": "MIT",
   "dependencies": {
-    "electron": "^4.0.4"
-  }
-  
+    "electron": "^4.0.4",
+    "electron-squirrel-startup": "^1.0.0"
+  },
+  "devDependencies": {}
 }
