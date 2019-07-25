@@ -63,32 +63,6 @@ rd.addEventListener('click', function (event){
 
 })
 
-//Update Page
-const up=document.getElementById('btn3');
-up.addEventListener('click', function (event){
-
-    let upwin = new BrowserWindow({
-        width: 380,
-        height: 500,
-        frame:false,
-        resizable:false,
-        //icon:taskIcon,
-        skipTaskbar:true,
-        //show:false,
-        //webPreferences:{backgroundThrottling:false}
-      });
-
-     upwin.setBounds({  x:800, y:180});
-    //Load html in window
-      upwin.loadURL(url.format({
-      pathname: path.join(__dirname, '../html/update.html'),
-      protocol: 'file:',
-      slashes:true
-    }));
-  
-
-})
-
 
 //Delete Page
 const dl=document.getElementById('btn4');

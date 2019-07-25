@@ -7,6 +7,7 @@ const fs = require('fs');
 const os = require('os');
 const nativeImage= electron.nativeImage;
 
+process.env['ELECTRON_DISABLE_SECURITY_WARNINGS'] = 'true';
 
 let win;
 let tray=null;
