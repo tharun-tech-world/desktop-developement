@@ -10,22 +10,21 @@ const close=document.getElementById("close").addEventListener("click", function 
 }); 
 
 
-//Create Page
+//Create Page window
 const crt=document.getElementById('btn1');
 crt.addEventListener('click', function (event){
 
-    let crtwin = new BrowserWindow({
+      crtwin = new BrowserWindow({
         width: 380,
         height: 500,
         frame:false,
         resizable:false,
-        //icon:taskIcon,
+        //icon:taskIcon, 
         skipTaskbar:true,
         //show:false,
         webPreferences:{backgroundThrottling:false, nodeIntegration:true}
+      
       });
-
-     crtwin.setBounds({  x:800, y:180});
     //Load html in window
       crtwin.loadURL(url.format({
       pathname: path.join(__dirname, '../html/create.html'),
@@ -33,11 +32,9 @@ crt.addEventListener('click', function (event){
       slashes:true
     }));
     //crtwin.webContents.openDevTools();
-  
-
 })
 
-//Read Page
+//Read Page window
 const rd=document.getElementById('btn2');
 rd.addEventListener('click', function (event){
 
@@ -52,7 +49,6 @@ rd.addEventListener('click', function (event){
         //webPreferences:{backgroundThrottling:false}
       });
 
-     rdwin.setBounds({  x:800, y:180});
     //Load html in window
       rdwin.loadURL(url.format({
       pathname: path.join(__dirname, '../html/read.html'),
@@ -64,7 +60,7 @@ rd.addEventListener('click', function (event){
 })
 
 
-//Delete Page
+//Delete Page window
 const dl=document.getElementById('btn4');
 dl.addEventListener('click', function (event){
 
@@ -78,8 +74,6 @@ dl.addEventListener('click', function (event){
         //show:false,
         //webPreferences:{backgroundThrottling:false}
       });
-
-     dlwin.setBounds({  x:800, y:180});
     //Load html in window
       dlwin.loadURL(url.format({
       pathname: path.join(__dirname, '../html/delete.html'),

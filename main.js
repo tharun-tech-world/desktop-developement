@@ -18,10 +18,10 @@ process.env['ELECTRON_DISABLE_SECURITY_WARNINGS'] = 'true';
 
 let win;
 let tray=null;
-//let taskIcon=nativeImage.createFromPath(path.join(__dirname,'./public/assets/abhi.png'));
+let taskIcon=nativeImage.createFromPath(path.join(__dirname,'./public/assets/abhi.png'));
 
 function createWindow(){
-        //Tray ICon Implementation.
+       //Tray ICon Implementation.
         tray=new Tray(iconPath);
         tray.setToolTip('Tharun App');
         let template=[{
@@ -37,20 +37,26 @@ function createWindow(){
           win.isVisible() ? win.hide() : win.show();
           
         }) 
-  // Create new window
+/*let display = electron.screen.getPrimaryDisplay();
+let width = display.bounds.width;
+let height=display.bounds.height;
+*/
+
+// Create new window
     win = new BrowserWindow({
       width: 380,
       height: 500,
+      //x: width-980,
+      //y: height-500,
       frame:false,
       resizable:false,
-      //icon:taskIcon,
-      skipTaskbar:true,
+      //icon:taskIcon, 
+      skipTaskbar:true,  
       //show:false,
-      //webPreferences:{backgroundThrottling:false}
+      webPreferences:{backgroundThrottling:false, nodeIntegration:true}
     
     });
-    win.setBounds({  x:800, y:180})
-    //console.log(win.getBounds())
+    
   //Load html in window
     win.loadURL(url.format({
     pathname: path.join(__dirname, './public/html/welcomecrud.html'),
@@ -58,7 +64,7 @@ function createWindow(){
     slashes:true
   }));
 
-   // Task Bar ICon 
+   //Task Bar ICon 
    win.setThumbarButtons([
     {
       tooltip: 'Tharun App',
@@ -79,14 +85,12 @@ app.on('ready', createWindow );
 
 app.on("window-all-closed", ()=>{
   if(process.platform!=='darwin')
-
   app.quit();
 })
 
 app.on('activate', ()=>{
 
   if(win===null){
-
     createWindow()
   }
 })
