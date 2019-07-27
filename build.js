@@ -9,6 +9,10 @@ var settings = {
     outputDirectory: './Tharun-Builds',
     // The name of the Author of the app (the name of your company)
     authors: 'Tharun Techie',
+    //setUp Icon for your executable file
+    setupIcon: './abhiico.ico',
+    //setUp name for your executable file
+    setupExe: 'CRUD',
     // The name of the executable of your built
     exe: './Tharun-CRUD.exe'
 };
