@@ -9,7 +9,7 @@
   "author": "Tharun Pothuraj",
   "license": "MIT",
   "dependencies": {
-    "electron": "^4.0.4",
+    "electron": "^11.5.0",
     "electron-packager": "^14.0.3",
     "electron-squirrel-startup": "^1.0.0"
   },
